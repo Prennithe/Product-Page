@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    .product-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-image {
+      text-align: center;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .product-details {
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .product-description {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #009688;
+      margin-bottom: 10px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .controls input {
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #ff5722;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+    }
+
+    #message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 700px) {
+      .product-container {
+        flex-direction: row;
+      }
+
+      .product-image, .product-details {
+        flex: 1;
+      }
+
+      .product-details {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="https://via.placeholder.com/400x400.png?text=Wireless+Headphones" alt="Wireless Headphones">
+    </div>
+    <div class="product-details">
+      <h2 class="product-title">Wireless Headphones</h2>
+      <p class="product-description">Experience high-quality sound with noise cancellation and long battery life. Perfect for travel, work, or relaxation.</p>
+      <p class="price">₹3,499</p>
+      <div class="controls">
+        <label for="quantity">Qty:</label>
+        <input type="number" id="quantity" value="1" min="1">
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <p id="message"></p>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const qty = document.getElementById("quantity").value;
+      document.getElementById("message").innerText = `✅ ${qty} item(s) added to cart!`;
+    }
+  </script>
+
+</body>
+</html>
